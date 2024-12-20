@@ -1,0 +1,12 @@
+---
+- name: Configure Static Server
+  hosts: static_server
+  become: true
+
+  roles:
+    - role: users
+    - role: common
+    - role: zsh_ohmyzsh
+    - role: ssh
+    - role: nginx
+    - role: static_files

@@ -1,0 +1,5 @@
+---
+- name: Copy static files
+  copy:
+    src: ./files/images/
+    dest: /var/www/html/images/

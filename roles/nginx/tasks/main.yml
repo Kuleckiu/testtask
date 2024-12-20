@@ -1,0 +1,22 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Configure nginx vhost
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+
+- name: Check if nginx is running
+  stat:
+    path: /run/nginx.pid
+  register: nginx_pid_file
+
+- name: Start nginx if it's not running
+  command: /usr/sbin/nginx
+  when: nginx_pid_file.stat.exists == False
+
+- name: Restart nginx
+  shell: "nginx -s reload"

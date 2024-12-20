@@ -1,0 +1,31 @@
+custom_groups: [ "developers", "devops" ]
+
+users:
+  - name: "john"
+    state: "present"
+    shell: "/bin/bash"
+    groups: ["developers"]
+    password: "password"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDW1814bEbBH4mnE49Za1agGwMETpxtvGRSmt5cepRFuwUHBC4DiOp7/nyySjLk+ATDtcGZm1lDxvGj+5iDAQUU/68gP6l6UrLoepqhwe5h7UMU9ff/RQFtIF8RQktnuL4HJ4EvT/r7EPeMQ1eYLz+BmhSPUFlMAubMhVLYPwVUhaBFruRIk9vHYB2pfZRnbXSFJS+wf3e3Gfj4IH09Gu4eQHoRnGxOI+F/Vt3ldna5zXC6l/lQqLUDdaEZnvDJzcm+hX8H3wHSLSrii2Zhl1tk0Eh3piE1kFAf7gxDmgXg3aKT8fFWKic5NM1eQrC06ir6M30hZUswAkq+RQQA3ZlsL1PuzwGJsewhHe34Zx0gMMR3U0xVxlCZlDwjOyU9bztTf6yQwFSqIFT5BZbG2O+3i3inekD6urxcd9EWT/xcnQj+g+IdJU78UQnf7o8+Mb5jPRowNWvXJ7rur+DJckm56SlhqQsa+gkkEejlN6rYziZka6rPcUI+LREQpbFMoin3ULvF9ronmlaZ4JIhZ17XD3wDaUzoQCEUmGEFZshaCz1S7Opy0d++cwS0JsazzyKJ+cVBMh3hMarM0GUSgUsrCtjeSIwP88q1FZ6ABIHebcSIChuFkzkimwkqt9K646nTKEb/JTE6slwXwz51aoHoei4pGi2r69Yf06n7AEtQXQ== ansible@localhost"
+
+  - name: "alex"
+    state: "present"
+    shell: "/bin/zsh"
+    groups: ["developers"]
+    password: "password"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDW1814bEbBH4mnE49Za1agGwMETpxtvGRSmt5cepRFuwUHBC4DiOp7/nyySjLk+ATDtcGZm1lDxvGj+5iDAQUU/68gP6l6UrLoepqhwe5h7UMU9ff/RQFtIF8RQktnuL4HJ4EvT/r7EPeMQ1eYLz+BmhSPUFlMAubMhVLYPwVUhaBFruRIk9vHYB2pfZRnbXSFJS+wf3e3Gfj4IH09Gu4eQHoRnGxOI+F/Vt3ldna5zXC6l/lQqLUDdaEZnvDJzcm+hX8H3wHSLSrii2Zhl1tk0Eh3piE1kFAf7gxDmgXg3aKT8fFWKic5NM1eQrC06ir6M30hZUswAkq+RQQA3ZlsL1PuzwGJsewhHe34Zx0gMMR3U0xVxlCZlDwjOyU9bztTf6yQwFSqIFT5BZbG2O+3i3inekD6urxcd9EWT/xcnQj+g+IdJU78UQnf7o8+Mb5jPRowNWvXJ7rur+DJckm56SlhqQsa+gkkEejlN6rYziZka6rPcUI+LREQpbFMoin3ULvF9ronmlaZ4JIhZ17XD3wDaUzoQCEUmGEFZshaCz1S7Opy0d++cwS0JsazzyKJ+cVBMh3hMarM0GUSgUsrCtjeSIwP88q1FZ6ABIHebcSIChuFkzkimwkqt9K646nTKEb/JTE6slwXwz51aoHoei4pGi2r69Yf06n7AEtQXQ== ansible@localhost"
+
+  - name: "mike"
+    state: "present"
+    shell: "/bin/zsh"
+    groups: ["devops"]
+    password: "password"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDW1814bEbBH4mnE49Za1agGwMETpxtvGRSmt5cepRFuwUHBC4DiOp7/nyySjLk+ATDtcGZm1lDxvGj+5iDAQUU/68gP6l6UrLoepqhwe5h7UMU9ff/RQFtIF8RQktnuL4HJ4EvT/r7EPeMQ1eYLz+BmhSPUFlMAubMhVLYPwVUhaBFruRIk9vHYB2pfZRnbXSFJS+wf3e3Gfj4IH09Gu4eQHoRnGxOI+F/Vt3ldna5zXC6l/lQqLUDdaEZnvDJzcm+hX8H3wHSLSrii2Zhl1tk0Eh3piE1kFAf7gxDmgXg3aKT8fFWKic5NM1eQrC06ir6M30hZUswAkq+RQQA3ZlsL1PuzwGJsewhHe34Zx0gMMR3U0xVxlCZlDwjOyU9bztTf6yQwFSqIFT5BZbG2O+3i3inekD6urxcd9EWT/xcnQj+g+IdJU78UQnf7o8+Mb5jPRowNWvXJ7rur+DJckm56SlhqQsa+gkkEejlN6rYziZka6rPcUI+LREQpbFMoin3ULvF9ronmlaZ4JIhZ17XD3wDaUzoQCEUmGEFZshaCz1S7Opy0d++cwS0JsazzyKJ+cVBMh3hMarM0GUSgUsrCtjeSIwP88q1FZ6ABIHebcSIChuFkzkimwkqt9K646nTKEb/JTE6slwXwz51aoHoei4pGi2r69Yf06n7AEtQXQ== ansible@localhost"
+
+  - name: "vova"
+    state: "present"
+    shell: "/bin/sh"
+    groups: [ "developers", "devops" ]
+    password: "password"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDW1814bEbBH4mnE49Za1agGwMETpxtvGRSmt5cepRFuwUHBC4DiOp7/nyySjLk+ATDtcGZm1lDxvGj+5iDAQUU/68gP6l6UrLoepqhwe5h7UMU9ff/RQFtIF8RQktnuL4HJ4EvT/r7EPeMQ1eYLz+BmhSPUFlMAubMhVLYPwVUhaBFruRIk9vHYB2pfZRnbXSFJS+wf3e3Gfj4IH09Gu4eQHoRnGxOI+F/Vt3ldna5zXC6l/lQqLUDdaEZnvDJzcm+hX8H3wHSLSrii2Zhl1tk0Eh3piE1kFAf7gxDmgXg3aKT8fFWKic5NM1eQrC06ir6M30hZUswAkq+RQQA3ZlsL1PuzwGJsewhHe34Zx0gMMR3U0xVxlCZlDwjOyU9bztTf6yQwFSqIFT5BZbG2O+3i3inekD6urxcd9EWT/xcnQj+g+IdJU78UQnf7o8+Mb5jPRowNWvXJ7rur+DJckm56SlhqQsa+gkkEejlN6rYziZka6rPcUI+LREQpbFMoin3ULvF9ronmlaZ4JIhZ17XD3wDaUzoQCEUmGEFZshaCz1S7Opy0d++cwS0JsazzyKJ+cVBMh3hMarM0GUSgUsrCtjeSIwP88q1FZ6ABIHebcSIChuFkzkimwkqt9K646nTKEb/JTE6slwXwz51aoHoei4pGi2r69Yf06n7AEtQXQ== ansible@localhost"
+

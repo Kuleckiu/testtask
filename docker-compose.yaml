@@ -1,0 +1,13 @@
+services:
+  static-server:
+    build: .
+    container_name: static-server
+    ports:
+      - "2222:22"
+      - "80:80"
+    networks:
+      - ansible_net
+
+networks:
+  ansible_net:
+    driver: bridge

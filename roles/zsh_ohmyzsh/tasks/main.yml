@@ -1,0 +1,45 @@
+---
+- name: Filter users with Zsh shell
+  ansible.builtin.set_fact:
+    zsh_users: "{{ users | selectattr('shell', 'equalto', '/bin/zsh') | map(attribute='name') | list }}"
+
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+
+- name: Install acl
+  apt:
+    name: acl
+    state: latest
+
+- name: Debug list of users with Zsh shell
+  ansible.builtin.debug:
+    var: zsh_users
+
+- name: Ensure ansible tmp directory exists
+  file:
+    path: "/home/{{ item }}/.ansible/tmp"
+    state: directory
+    mode: '0755'
+  loop: "{{ zsh_users }}"
+
+- name: Fix ownership of .ansible directories for Zsh users
+  file:
+    path: "/home/{{ item }}/.ansible"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: '0755'
+    recurse: true
+  loop: "{{ zsh_users }}"
+  
+
+- name: Install Oh My Zsh for users with Zsh shell
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
+  args:
+    creates: "/home/{{ item }}/.oh-my-zsh"
+  loop: "{{ zsh_users }}"
+  become_user: "{{ item }}"
+

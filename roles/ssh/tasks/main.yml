@@ -1,0 +1,22 @@
+---
+- name: Configure SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    line: "{{ item }}"
+  with_items:
+    - "PermitRootLogin no"
+    - "PermitEmptyPasswords no"
+    - "LogLevel VERBOSE"
+    - "X11Forwarding no"
+- name: Restart SSH manually
+  shell: "kill -HUP $(cat /var/run/sshd.pid)"
+
+# - name: Restart SSH service
+#   service:
+#     name: ssh
+#     state: restarted
+
+# - name: Restart SSH manually
+#   shell: "kill -HUP $(cat /var/run/sshd.pid)"
+#   args:
+#     warn: false
